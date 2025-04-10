@@ -1,0 +1,262 @@
+html {
+    font-size: 14px;
+    line-height: normal;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+body::-webkit-scrollbar-thumb {
+    display: none;
+}
+body::-webkit-scrollbar-track-piece
+{
+    display:none;
+}
+.p-panel::-webkit-scrollbar {
+    display: none;
+}
+.p-panel::-webkit-scrollbar-thumb {
+    display: none;
+}
+.p-panel::-webkit-scrollbar-track-piece
+{
+    display:none;
+}
+.loginWallpaper {
+    background-image: url('@/assets/images/loginWallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;    
+    background-size: cover;
+}
+.backgroundWallpaper {
+    background: url('@/assets/images/backgroundWallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.p-float-label label {
+    margin-top: -0.8rem;
+}
+.primary-color-text {
+    color: var(--primary-color);
+}
+.p-toast .p-toast-message .p-toast-message-content {
+    border: 0;
+}
+.p-inputtext.p-invalid.p-component {
+    border-style: solid;
+}
+.p-panel.no-header .p-panel-header {
+    display: none;
+}
+.p-datatable .p-datatable-thead > tr > th {
+    padding: 0.5rem 1rem !important;
+}
+.p-panel-content {
+    padding: 0.25rem;
+}
+.btnsStatus .p-button:not(.p-button-icon-only) {
+    padding: 0.4rem 1.15rem !important;
+}
+.p-button:not(.p-button-icon-only) {
+    padding: 0.65rem 1.15rem !important;
+
+}
+.p-datepicker table td {
+    padding: 0.1rem;
+}
+.p-datepicker .p-datepicker-buttonbar,
+.p-datepicker .p-datepicker-header,
+.p-datepicker .p-datepicker-title button {
+    padding: 0.25rem 0;
+}
+.p-button-label {
+    font-weight: 500;
+}
+.p-datatable-footer {
+    padding: 0.5rem 1rem !important;
+    font-weight: 500;
+    font-size: 12px;
+}
+.p-datatable .p-tag-value {
+    font-size: .85rem;
+}
+.p-dropdown-panel .p-dropdown-header {
+    padding: 0.5rem !important;
+}
+.p-button.p-button-secondary, .p-button-group.p-button-secondary > .p-button, .p-splitbutton.p-button-secondary > .p-button {
+    /* color: #475569; */
+    /* background: #f1f5f9; */
+    /* border: 1px solid #f1f5f9; */
+}
+.p-rowgroup-header td,
+.p-rowgroup-footer td {
+    padding: 0.5rem 1rem;
+}
+.p-datepicker-calendar thead,
+.p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
+    background: rgba(30, 30, 30, 1);
+    border: none;
+    color: blueviolet;
+}
+.p-datepicker:not(.p-datepicker-inline) {
+    background: rgba(30, 30, 30, 0.95);
+    color: blueviolet;
+    width: auto !important;
+}
+.p-datepicker table td > span.p-highlight,
+.p-datepicker table td.p-datepicker-today > span,
+.p-datepicker table td.p-datepicker-today > span.p-highlight,
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
+    background: transparent;
+    border-radius: 5px;
+    color: blueviolet;
+
+}
+.p-datepicker .p-datepicker-header .p-datepicker-prev:enabled:hover, .p-datepicker .p-datepicker-header .p-datepicker-next:enabled:hover {
+    background: transparent !important;
+}
+.p-datepicker table td > span {
+    width: 2rem;
+    height: 2rem;
+}
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):not(.marcado):hover {
+    background: #fff;
+    border-radius: 5px;
+    color: blueviolet;
+}
+.p-datepicker table td span:has(.marcado),
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):has(.marcado):hover {
+    background: #000;
+    border-radius: 5px;
+    color: blueviolet;
+}
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year, .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    color: blueviolet;
+}
+span.p-column-title {
+    font-size: 0.7rem !important;
+    color: #d4d9df99 !important;
+}
+.p-datepicker table td {
+    padding: 0.05rem !important;
+}
+.p-progress-spinner-circle {
+    stroke: #fff;
+    animation: p-progress-spinner-dash 1.5s ease-in-out infinite;
+}
+.text-default {
+    color: #d4d9df !important;
+}
+.text-link {
+    cursor: pointer;
+    color: #865be2b7 !important;
+}
+.text-purple {
+    color: #855be2 !important;
+    font-size: 18px;
+    line-height: 48px !important;
+    margin: 0 15px;
+    cursor: pointer;
+}
+.text-link:hover {
+    text-decoration: underline;
+}
+.p-panelmenu-panel span.pi {
+    color: #d4d9df !important;
+}
+.p-panelmenu-panel span.pi:hover {
+    color: #855be2 !important;
+}
+.p-panelmenu-panel span.pi.menuAtivo {
+    color: #855be2 !important;
+}
+.iconWhatsapp {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+.iconWhatsapp img {
+    width: 64px;
+}
+.painel-comprador i {
+    margin-left: 10px;
+}
+.painel-comprador {
+    cursor: pointer;
+    font-size: 14px;
+    color: #855be2 !important;
+    background-color: #000;
+    border: 1px solid #1d1b21 !important;
+    padding: 10px 20px;
+}
+.p-divider.p-divider-horizontal:before,
+.p-divider {
+    border: 1px solid #1d1b21 !important;
+    border-top: 0;
+
+}
+.p-button.p-button-primary.p-button-outlined:hover {
+    background-color: #855be2;
+    color: #fff;
+    border-color: #855be2;
+}
+.themeSwitch i {
+    font-size: 10px;
+}
+.themeSwitch {
+    /* border: 1px solid #fff; */
+    width: 44px;
+}
+.themeSwitch div.border-off {
+    color: #000;
+    background: #000;
+    border: 1px solid #fff;
+    float: left;
+}
+.themeSwitch div {
+    width: fit-content;
+    color: #000;
+    background: #fff;
+    border-radius: 100%;
+    padding: 2.5px 5px;
+    float: right;
+    border: 1px solid #fff;
+}
+.switchTheme .p-inputswitch {
+    width: 2.5rem !important;
+    height: 1.35rem !important;
+}
+.switchTheme .p-inputswitch .p-inputswitch-slider:before {
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+    margin-top: -0.45rem !important;
+    transform: translateX(1.1rem);
+    content: "\e9c7";
+    font-family: 'primeicons';
+    color: #000;
+    font-size: 9px;
+    padding-left: 2.5px;
+    padding-top: 2px;
+}
+.switchTheme .p-inputswitch.p-highlight .p-inputswitch-slider {
+    background-color: #000;
+    border: 1px solid #454545;
+}
+.dark .p-panel.panel3 .p-panel-header {
+    background-color: #151515 !important;
+    padding: 10px 17.5px;
+}
+.panel2 {
+    margin-bottom: 10px;
+    
+}
+.panel2 .p-panel-header {
+    min-height: 38px;
+}
+.panel2 .p-4 {
+    padding-top: 0 !important;
+}
+.hoverBtn:hover {
+    background-color: rgb(167, 130, 245);
+}

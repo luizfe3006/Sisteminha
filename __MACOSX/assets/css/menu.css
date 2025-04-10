@@ -1,0 +1,23 @@
+.bg-primary {
+    background-color: #182433;
+}
+.p-panelmenu-header-content,
+.p-panelmenu-content,
+.p-menuitem-content {
+    border-radius: 0;
+    background-color: transparent;
+    border: 0;
+    color: #f1f5f9 !important;
+}
+.p-panelmenu-header-content:hover,
+.p-menuitem-content:hover,
+.p-menuitem-content:hover {
+    color: #cbd5e1 !important;
+    background-color: transparent;
+}
+.p-panelmenu-root-list {
+    padding: 0 0 0 1rem;
+}
+.p-panelmenu-panel span.pi {
+    line-height: unset !important;
+}

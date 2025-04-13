@@ -185,7 +185,7 @@
       <div
         v-if="showFilters"
         class="fixed top-0 right-0 h-full shadow-lg z-[4001] flex flex-col"
-        :style="{ width: '520px' }"
+        :style="{ width: '450px' }"
       >
         <!-- Título fixo no topo -->
         <div
@@ -444,19 +444,24 @@
           </PrimePanel>
 
           <div
-            class="px-2 py-4 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr] pr-4"
-            style="bottom: 0; background-color: #000; width: 520px"
+            class="px-2 py-3 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr]"
+            style="bottom: 0; background-color: #000; width: 420px"
           >
             <PrimeButton
-              class="primary hoverBtn w-[270px] bg-black dark:bg-[#855be2] border-none text-ms font-semibold justify-center"
+              class="primary hoverBtn w-[100%] bg-black dark:bg-[#855be2] border-none text-ms justify-center"
               @click="aplicarFiltros()"
+              style="font-weight: 600; font-size: 0.9rem !important"
             >
               Aplicar Filtro
             </PrimeButton>
             <PrimeButton
               outlined
-              class="primary hoverBtn w-[91px] hover:text-white text-[#855be2] bg-black text-ms font-semibold justify-center"
-              style="border-color: #855be2"
+              class="primary hoverBtn w-[auto] hover:text-white text-[#855be2] bg-black text-ms justify-center"
+              style="
+                border-color: #855be2;
+                font-weight: 400;
+                font-size: 0.9rem !important;
+              "
             >
               Limpar
             </PrimeButton>

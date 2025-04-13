@@ -235,6 +235,7 @@
                       v-model="startDate"
                       :dateFormat="'dd/mm/yy'"
                       class="wcalendar"
+                      :max-date="new Date()"
                     >
                       <template #date="slotProps">
                         <span
@@ -282,6 +283,7 @@
                       v-model="endDate"
                       :dateFormat="'dd/mm/yy'"
                       class="wcalendar"
+                      :max-date="new Date()"
                     >
                       <template #date="slotProps">
                         <span

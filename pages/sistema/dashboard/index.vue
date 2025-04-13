@@ -409,7 +409,7 @@ const chartOptions = {
 }
 
 /* Adiciona o efeito de sombra nos elementos de input */
-.p-calendar .p-datepicker {
+.p-calendar {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -441,69 +441,5 @@ const chartOptions = {
 
 .dark .group-calendar .p-inputtext {
   border-width: 0;
-}
-
-/* Estilo glassmorphism para componentes internos do datepicker */
-.p-datepicker,
-.p-datepicker-group-container,
-.p-datepicker-group,
-.p-datepicker-header,
-.p-datepicker-calendar-container,
-.p-datepicker-calendar thead,
-.p-datepicker-calendar tbody {
-  background-color: rgba(0, 8, 15, 0.1) !important;
-  backdrop-filter: blur(8px) !important;
-}
-
-.p-datepicker-calendar tbody tr td {
-  padding: 0.1rem !important;
-}
-
-/* Caso queira alterar a borda quando estiver em foco */
-.p-inputtext:focus {
-  border-color: #855be2 !important; /* Exemplo de borda roxa no foco */
-}
-.p-datepicker-calendar-container thead th {
-  width: 14.28%;
-  padding-left: 0;
-  padding-right: 0;
-}
-.p-datepicker-calendar-container tr {
-  display: block;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.p-datepicker-calendar-container thead tr:first-of-type {
-  padding-bottom: 10px;
-}
-.p-datepicker-calendar-container tbody tr:first-of-type {
-  padding-top: 5px;
-}
-.p-datepicker-calendar-container tbody tr:last-of-type {
-  padding-bottom: 5px;
-}
-.p-datepicker table {
-  margin-top: 0;
-}
-.p-datepicker .p-datepicker-header .p-datepicker-title {
-  line-height: 1rem;
-}
-.p-datepicker .p-datepicker-header .p-datepicker-prev,
-.p-datepicker .p-datepicker-header .p-datepicker-next {
-  height: 1rem;
-  color: #fff;
-}
-.p-datepicker-calendar-container tbody {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  /* padding: 5px; */
-}
-.p-datepicker-month {
-  text-transform: lowercase;
-}
-.p-datepicker table th > span,
-.p-datepicker-month,
-.p-datepicker-year {
-  font-weight: normal !important;
 }
 </style>

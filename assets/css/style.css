@@ -45,9 +45,7 @@ body::-webkit-scrollbar-track-piece {
 .p-inputtext.p-invalid.p-component {
   border-style: solid;
 }
-.p-panel.no-header .p-panel-header {
-  display: none;
-}
+
 .p-datatable .p-datatable-thead > tr > th {
   padding: 0.5rem 1rem !important;
 }
@@ -183,19 +181,6 @@ body::-webkit-scrollbar-track-piece {
   background-color: #0b0b0d;
   border: 1px solid #454545;
 }
-.dark .p-panel.panel3 .p-panel-header {
-  background-color: #151515 !important;
-  padding: 10px 17.5px;
-}
-.panel2 {
-  margin-bottom: 10px;
-}
-.panel2 .p-panel-header {
-  min-height: 38px;
-}
-.panel2 .p-4 {
-  padding-top: 0 !important;
-}
 .hoverBtn:hover {
   background-color: rgb(167, 130, 245);
 }
@@ -284,8 +269,6 @@ body::-webkit-scrollbar-track-piece {
   color: #7b7fff;
 }
 
-
-
 /** corrige tamanho das opcoes dos dias*/
 .p-datepicker table td > span {
   width: 1.7rem;
@@ -293,7 +276,6 @@ body::-webkit-scrollbar-track-piece {
   margin: 0.166rem;
   font-weight: 500;
 }
-
 
 .p-datepicker table td span:has(.marcado),
 .p-datepicker:not(.p-disabled)
@@ -316,4 +298,24 @@ body::-webkit-scrollbar-track-piece {
 .p-datepicker-other-month > span {
   background-color: transparent !important;
   font-weight: 500 !important;
+}
+
+/** PAGINA DE VENDAS - MENU LATERAL */
+.p-panel.no-header .p-panel-header {
+  display: none;
+}
+
+.dark .p-panel.panel3 .p-panel-header {
+  background-color: #151515 !important;
+  padding: 10px 17.5px;
+}
+.panel2 {
+  margin-bottom: 10px;
+}
+.panel2 .p-panel-header {
+  min-height: 38px;
+}
+
+.panel2 .p-4 {
+  padding-top: 0 !important;
 }

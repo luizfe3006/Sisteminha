@@ -185,7 +185,7 @@
       <div
         v-if="showFilters"
         class="fixed top-0 right-0 h-full shadow-lg z-[4001] flex flex-col"
-        :style="{ width: '400px' }"
+        :style="{ width: '520px' }"
       >
         <!-- Título fixo no topo -->
         <div
@@ -443,7 +443,7 @@
 
           <div
             class="px-2 py-4 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr] pr-4"
-            style="bottom: 0; background-color: #000; width: 400px"
+            style="bottom: 0; background-color: #000; width: 520px"
           >
             <PrimeButton
               class="primary hoverBtn w-[270px] bg-black dark:bg-[#855be2] border-none text-ms font-semibold justify-center"
@@ -863,6 +863,10 @@ onMounted(() => {
     loadingData.value = false;
   }, 1000);
 
+  setInterval(() => {
+    mudaLabelCalendario();
+  }, 100);
+
   const dashboard = JSON.parse(localStorage.getItem("dashboard"));
   if (dashboard) {
     totalPedidos.value = dashboard.totalPedidos;
@@ -872,6 +876,38 @@ onMounted(() => {
     valorComissoes.value = dashboard.valorComissoes;
   }
 });
+
+const mudaLabelCalendario = () => {
+  document
+    .querySelectorAll(".p-datepicker-calendar th span")
+    .forEach(function (elemento) {
+      switch (elemento.textContent) {
+        case "Do":
+          elemento.textContent = "dom";
+          break;
+        case "Se":
+          elemento.textContent = "seg";
+          break;
+        case "Te":
+          elemento.textContent = "ter";
+          break;
+        case "Qa":
+          elemento.textContent = "qua";
+          break;
+        case "Qi":
+          elemento.textContent = "qui";
+          break;
+        case "Sx":
+          elemento.textContent = "sex";
+          break;
+        case "Sa":
+          elemento.textContent = "sáb";
+          break;
+        default:
+          break;
+      }
+    });
+};
 
 const fechaBlur = () => {
   if (showFilters.value) {

@@ -31,7 +31,7 @@
                   @mouseover="hoverInitDate = slotProps.date"
                   @mouseleave="hoverInitDate = null"
                   v-if="isMarked(slotProps.date)"
-                  class="marcado"
+                  class="marcado w-full h-full flex items-center justify-center"
                 >
                   {{ slotProps.date.day }}
                 </div>
@@ -39,6 +39,7 @@
                   @mouseover="hoverInitDate = slotProps.date"
                   @mouseleave="hoverInitDate = null"
                   v-else
+                  class="w-full h-full flex items-center justify-center"
                 >
                   {{ slotProps.date.day }}
                 </div>
@@ -62,7 +63,7 @@
                   @mouseover="hoverEndDate = slotProps.date"
                   @mouseleave="hoverEndDate = null"
                   v-if="isMarked(slotProps.date)"
-                  class="marcado"
+                  class="marcado w-full h-full flex items-center justify-center"
                 >
                   {{ slotProps.date.day }}
                 </div>
@@ -70,6 +71,7 @@
                   @mouseover="hoverEndDate = slotProps.date"
                   @mouseleave="hoverEndDate = null"
                   v-else
+                  class="w-full h-full flex items-center justify-center"
                 >
                   {{ slotProps.date.day }}
                 </div>

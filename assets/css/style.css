@@ -206,8 +206,9 @@ body::-webkit-scrollbar-track-piece {
   text-align: center;
   vertical-align: middle;
   position: relative;
-  height: 2rem; /* ou a altura que seu td tiver */
+  height: 2rem;
 }
+
 .p-datepicker table td > span {
   display: flex;
   width: 100%;
@@ -216,6 +217,11 @@ body::-webkit-scrollbar-track-piece {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
+  /* background-color: hsla(0, 0%, 100%, 0.04) !important; */
+  background-color:transparent !important;
 }
 
 .p-datepicker {
@@ -231,10 +237,16 @@ body::-webkit-scrollbar-track-piece {
 .p-datepicker-header {
   text-align: center;
   padding-top: 8px;
-  background-color: hsla(0, 0%, 100%, 0.04) !important;
-  backdrop-filter: blur(15px);
+  /* background-color: hsla(0, 0%, 100%, 0.04) !important; */
+  /* backdrop-filter: blur(15px); */
   color: #855be2 !important;
+  padding-bottom: 0px !important;
 }
+
+.p-datepicker-year {
+  padding-left: 0px !important;
+}
+
 .p-datepicker-calendar {
   margin-top: 0 !important;
 }
@@ -242,10 +254,10 @@ body::-webkit-scrollbar-track-piece {
 /** header - dias da semana */
 .p-datepicker-calendar thead tr {
   text-align: center;
-  background-color: hsla(0, 0%, 100%, 0.04) !important;
-  backdrop-filter: blur(15px);
+  /* background-color: hsla(0, 0%, 100%, 0.04) !important; */
+  /* backdrop-filter: blur(15px); */
   color: #7b7fff !important;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
 }
 
 /** remove linha branca abaixo do mes*/
@@ -280,8 +292,12 @@ body::-webkit-scrollbar-track-piece {
 }
 
 .p-datepicker table tr th {
- padding-bottom: 8px;
+  padding-bottom: 8px;
+  padding-top: 0px !important;
+  border-bottom: 6px solid hsl(0deg 0% 6.06% / 62%);
+  /* backdrop-filter: blur(15px); */
 }
+
 .p-datepicker table tr th > span {
   font-weight: 100;
   font-size: 0.8rem;

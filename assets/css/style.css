@@ -220,7 +220,6 @@ body::-webkit-scrollbar-track-piece {
 }
 
 .p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
-  /* background-color: hsla(0, 0%, 100%, 0.04) !important; */
   background-color:transparent !important;
 }
 
@@ -237,8 +236,6 @@ body::-webkit-scrollbar-track-piece {
 .p-datepicker-header {
   text-align: center;
   padding-top: 8px;
-  /* background-color: hsla(0, 0%, 100%, 0.04) !important; */
-  /* backdrop-filter: blur(15px); */
   color: #855be2 !important;
   padding-bottom: 0px !important;
 }
@@ -254,10 +251,7 @@ body::-webkit-scrollbar-track-piece {
 /** header - dias da semana */
 .p-datepicker-calendar thead tr {
   text-align: center;
-  /* background-color: hsla(0, 0%, 100%, 0.04) !important; */
-  /* backdrop-filter: blur(15px); */
   color: #7b7fff !important;
-  /* padding-bottom: 8px; */
 }
 
 /** remove linha branca abaixo do mes*/
@@ -295,7 +289,6 @@ body::-webkit-scrollbar-track-piece {
   padding-bottom: 8px;
   padding-top: 0px !important;
   border-bottom: 6px solid hsl(0deg 0% 6.06% / 62%);
-  /* backdrop-filter: blur(15px); */
 }
 
 .p-datepicker table tr th > span {

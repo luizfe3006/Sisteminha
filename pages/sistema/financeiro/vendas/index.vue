@@ -1326,7 +1326,6 @@ const SummaryCard = defineProps({
   color: #635e70;
 }
 
-
 /** altera estilo apenas para a pagina de vendas */
 .p-datepicker:not(.p-datepicker-inline) {
   background: hsla(0, 0%, 49%, 0.388);
@@ -1339,7 +1338,8 @@ const SummaryCard = defineProps({
   border-bottom: 6px solid hsla(0, 0%, 15%, 0.518);
 }
 
-.p-datepicker .p-datepicker-header .p-datepicker-prev, .p-datepicker .p-datepicker-header .p-datepicker-next {
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-next {
   color: #fff !important;
 } 
 </style>

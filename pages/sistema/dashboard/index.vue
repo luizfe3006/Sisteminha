@@ -27,44 +27,22 @@
               class="w-60 dark:bg-black dark:text-white bg-white text-black"
             >
               <template #date="slotProps">
-                <span
-                  v-if="
-                    new Date(
-                      slotProps.date.year +
-                        '-' +
-                        slotProps.date.month +
-                        '-' +
-                        slotProps.date.day
-                    ) >=
-                      new Date(
-                        inicio.getFullYear() +
-                          '-' +
-                          inicio.getMonth() +
-                          '-' +
-                          inicio.getDate()
-                      ) &&
-                    new Date(
-                      slotProps.date.year +
-                        '-' +
-                        slotProps.date.month +
-                        '-' +
-                        slotProps.date.day
-                    ) <=
-                      new Date(
-                        fim.getFullYear() +
-                          '-' +
-                          fim.getMonth() +
-                          '-' +
-                          fim.getDate()
-                      )
-                  "
-                  class="marcado"
+                <div
+                  @mouseover="hoverInitDate = slotProps.date"
+                  @mouseleave="hoverInitDate = null"
+                  v-if="isMarked(slotProps.date)"
+                  class="marcado w-full h-full flex items-center justify-center"
                 >
                   {{ slotProps.date.day }}
-                </span>
-                <template v-else>
+                </div>
+                <div
+                  @mouseover="hoverInitDate = slotProps.date"
+                  @mouseleave="hoverInitDate = null"
+                  v-else
+                  class="w-full h-full flex items-center justify-center"
+                >
                   {{ slotProps.date.day }}
-                </template>
+                </div>
               </template>
             </PrimeCalendar>
             <PrimeButton
@@ -81,44 +59,22 @@
               class="w-60 dark:bg-black dark:text-white bg-white text-black"
             >
               <template #date="slotProps">
-                <span
-                  v-if="
-                    new Date(
-                      slotProps.date.year +
-                        '-' +
-                        slotProps.date.month +
-                        '-' +
-                        slotProps.date.day
-                    ) >=
-                      new Date(
-                        inicio.getFullYear() +
-                          '-' +
-                          inicio.getMonth() +
-                          '-' +
-                          inicio.getDate()
-                      ) &&
-                    new Date(
-                      slotProps.date.year +
-                        '-' +
-                        slotProps.date.month +
-                        '-' +
-                        slotProps.date.day
-                    ) <=
-                      new Date(
-                        fim.getFullYear() +
-                          '-' +
-                          fim.getMonth() +
-                          '-' +
-                          fim.getDate()
-                      )
-                  "
-                  class="marcado"
+                <div
+                  @mouseover="hoverEndDate = slotProps.date"
+                  @mouseleave="hoverEndDate = null"
+                  v-if="isMarked(slotProps.date)"
+                  class="marcado w-full h-full flex items-center justify-center"
                 >
                   {{ slotProps.date.day }}
-                </span>
-                <template v-else>
+                </div>
+                <div
+                  @mouseover="hoverEndDate = slotProps.date"
+                  @mouseleave="hoverEndDate = null"
+                  v-else
+                  class="w-full h-full flex items-center justify-center"
+                >
                   {{ slotProps.date.day }}
-                </template>
+                </div>
               </template>
             </PrimeCalendar>
             <PrimeButton
@@ -159,6 +115,55 @@ const fim = ref(endOfMonth(new Date())); // Último dia do mês atual
 
 const rawData = ref([]);
 const loadingGrafico = ref(false);
+
+const hoverInitDate = ref(null);
+const hoverEndDate = ref(null);
+
+function isMarked(date) {
+  const current = new Date(date.year, date.month, date.day);
+
+  const start = inicio.value;
+  const end = fim.value;
+
+  const isHoverValidInit =
+    !hoverInitDate.value ||
+    new Date(
+      hoverInitDate.value.year,
+      hoverInitDate.value.month,
+      hoverInitDate.value.day
+    ) <= end;
+
+  const isHoverValidEnd =
+    !hoverEndDate.value ||
+    new Date(
+      hoverEndDate.value.year,
+      hoverEndDate.value.month,
+      hoverEndDate.value.day
+    ) >= start;
+
+  const hoverStart =
+    hoverInitDate.value && isHoverValidInit
+      ? new Date(
+          hoverInitDate.value.year,
+          hoverInitDate.value.month,
+          hoverInitDate.value.day
+        )
+      : start;
+
+  const hoverEnd =
+    hoverEndDate.value && isHoverValidEnd
+      ? new Date(
+          hoverEndDate.value.year,
+          hoverEndDate.value.month,
+          hoverEndDate.value.day
+        )
+      : end;
+
+  const min = new Date(Math.min(hoverStart.getTime(), hoverEnd.getTime()));
+  const max = new Date(Math.max(hoverStart.getTime(), hoverEnd.getTime()));
+
+  return current >= min && current <= max;
+}
 
 const aggregateSales = (sales) => {
   const groupedData = {};
@@ -441,5 +446,17 @@ const chartOptions = {
 
 .dark .group-calendar .p-inputtext {
   border-width: 0;
+}
+
+/** isso esta aqui pra prevenir que a alteracao da pagina de vendas sobrescreva o padrao */
+.p-datepicker:not(.p-datepicker-inline) {
+  background: hsla(0, 0%, 100%, 0.04);
+  backdrop-filter: blur(15px);
+}
+
+.p-datepicker table tr th {
+  padding-bottom: 8px;
+  padding-top: 0px !important;
+  border-bottom: 6px solid hsl(0deg 0% 6.06% / 62%);
 }
 </style>

@@ -45,9 +45,7 @@ body::-webkit-scrollbar-track-piece {
 .p-inputtext.p-invalid.p-component {
   border-style: solid;
 }
-.p-panel.no-header .p-panel-header {
-  display: none;
-}
+
 .p-datatable .p-datatable-thead > tr > th {
   padding: 0.5rem 1rem !important;
 }
@@ -183,19 +181,6 @@ body::-webkit-scrollbar-track-piece {
   background-color: #0b0b0d;
   border: 1px solid #454545;
 }
-.dark .p-panel.panel3 .p-panel-header {
-  background-color: #151515 !important;
-  padding: 10px 17.5px;
-}
-.panel2 {
-  margin-bottom: 10px;
-}
-.panel2 .p-panel-header {
-  min-height: 38px;
-}
-.panel2 .p-4 {
-  padding-top: 0 !important;
-}
 .hoverBtn:hover {
   background-color: rgb(167, 130, 245);
 }
@@ -221,8 +206,9 @@ body::-webkit-scrollbar-track-piece {
   text-align: center;
   vertical-align: middle;
   position: relative;
-  height: 2rem; /* ou a altura que seu td tiver */
+  height: 2rem;
 }
+
 .p-datepicker table td > span {
   display: flex;
   width: 100%;
@@ -233,21 +219,31 @@ body::-webkit-scrollbar-track-piece {
   transform: translate(-50%, -50%);
 }
 
+.p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
+  background-color:transparent !important;
+}
+
 .p-datepicker {
   font-family: Helvetica Neue, helvetica, arial, sans-serif;
   font-size: 0.8rem;
   color: #855be2 !important;
   padding: 0 !important;
+
+  z-index: 9999 !important;
 }
 
 /** Header - setas e mes */
 .p-datepicker-header {
   text-align: center;
   padding-top: 8px;
-  background-color: hsla(0, 0%, 100%, 0.04) !important;
-  backdrop-filter: blur(15px);
   color: #855be2 !important;
+  padding-bottom: 0px !important;
 }
+
+.p-datepicker-year {
+  padding-left: 0px !important;
+}
+
 .p-datepicker-calendar {
   margin-top: 0 !important;
 }
@@ -255,10 +251,7 @@ body::-webkit-scrollbar-track-piece {
 /** header - dias da semana */
 .p-datepicker-calendar thead tr {
   text-align: center;
-  background-color: hsla(0, 0%, 100%, 0.04) !important;
-  backdrop-filter: blur(15px);
   color: #7b7fff !important;
-  padding-bottom: 8px;
 }
 
 /** remove linha branca abaixo do mes*/
@@ -267,7 +260,7 @@ body::-webkit-scrollbar-track-piece {
 }
 
 .p-datepicker:not(.p-datepicker-inline) {
-  background: hsla(0, 0%, 100%, 0.04) !important;
+  background: hsla(0, 0%, 100%, 0.04);
   backdrop-filter: blur(15px);
   width: auto !important;
 }
@@ -284,15 +277,24 @@ body::-webkit-scrollbar-track-piece {
   color: #7b7fff;
 }
 
-
-
 /** corrige tamanho das opcoes dos dias*/
 .p-datepicker table td > span {
   width: 1.7rem;
   height: 1.7rem;
   margin: 0.166rem;
+  font-weight: 500;
 }
 
+.p-datepicker table tr th {
+  padding-bottom: 8px;
+  padding-top: 0px !important;
+  border-bottom: 6px solid hsl(0deg 0% 6.06% / 62%);
+}
+
+.p-datepicker table tr th > span {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
 
 .p-datepicker table td span:has(.marcado),
 .p-datepicker:not(.p-disabled)
@@ -305,7 +307,8 @@ body::-webkit-scrollbar-track-piece {
 
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
@@ -314,4 +317,25 @@ body::-webkit-scrollbar-track-piece {
 
 .p-datepicker-other-month > span {
   background-color: transparent !important;
+  font-weight: 500 !important;
+}
+
+/** PAGINA DE VENDAS - MENU LATERAL */
+.p-panel.no-header .p-panel-header {
+  display: none;
+}
+
+.dark .p-panel.panel3 .p-panel-header {
+  background-color: #151515 !important;
+  padding: 10px 17.5px;
+}
+.panel2 {
+  margin-bottom: 10px;
+}
+.panel2 .p-panel-header {
+  min-height: 38px;
+}
+
+.panel2 .p-4 {
+  padding-top: 0 !important;
 }

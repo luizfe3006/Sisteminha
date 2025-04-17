@@ -39,8 +39,18 @@
           @click="showModal = true"
         >
           <template #icon>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-              <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm60.1 106.5L224 336l60.1 93.5c5.1 8-.6 18.5-10.1 18.5h-34.9c-4.4 0-8.5-2.4-10.6-6.3C208.9 405.5 192 373 192 373c-6.4 14.8-10 20-36.6 68.8-2.1 3.9-6.1 6.3-10.5 6.3H110c-9.5 0-15.2-10.5-10.1-18.5l60.3-93.5-60.3-93.5c-5.2-8 .6-18.5 10.1-18.5h34.8c4.4 0 8.5 2.4 10.6 6.3 26.1 48.8 20 33.6 36.6 68.5 0 0 6.1-11.7 36.6-68.5 2.1-3.9 6.2-6.3 10.6-6.3H274c9.5-.1 15.2 10.4 10.1 18.4zM384 121.9v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 384 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm60.1 106.5L224 336l60.1 93.5c5.1 8-.6 18.5-10.1 18.5h-34.9c-4.4 0-8.5-2.4-10.6-6.3C208.9 405.5 192 373 192 373c-6.4 14.8-10 20-36.6 68.8-2.1 3.9-6.1 6.3-10.5 6.3H110c-9.5 0-15.2-10.5-10.1-18.5l60.3-93.5-60.3-93.5c-5.2-8 .6-18.5 10.1-18.5h34.8c4.4 0 8.5 2.4 10.6 6.3 26.1 48.8 20 33.6 36.6 68.5 0 0 6.1-11.7 36.6-68.5 2.1-3.9 6.2-6.3 10.6-6.3H274c9.5-.1 15.2 10.4 10.1 18.4zM384 121.9v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"
+              ></path>
             </svg>
           </template>
         </PrimeButton>
@@ -51,7 +61,19 @@
           @click="showFilters = !showFilters"
         >
           <template #icon>
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
+              ></path>
+            </svg>
           </template>
         </PrimeButton>
       </div>
@@ -162,27 +184,44 @@
     <Transition name="slide-left">
       <div
         v-if="showFilters"
-        class="fixed top-0 right-0 h-full bg-[#0b0b0e] shadow-lg z-[4001] flex flex-col"
-        :style="{ width: '400px' }"
+        class="fixed top-0 right-0 h-full shadow-lg z-[4001] flex flex-col"
+        :style="{ width: '450px' }"
       >
         <!-- Título fixo no topo -->
-        <div class="p-4 pb-8 pt-6 -mb-2 flex justify-between items-center bg-transparent">
+        <div
+          class="p-4 pb-8 pt-6 -mb-2 flex justify-between items-center bg-transparent"
+        >
           <span class="font-medium text-[17px]">Filtros</span>
         </div>
-        
+
         <!-- Área de conteúdo com rolagem -->
-        <div class="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-4 bg-[#101211]">
-          <PrimePanel v-panel-header-clickable class="panel2 header-clickable" header="Período" toggleable>
+        <div
+          class="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-4"
+        >
+          <PrimePanel
+            v-panel-header-clickable
+            class="panel2 header-clickable"
+            header="Período"
+            toggleable
+          >
             <template #togglericon="slotProps">
-              <svg 
-                xmlns='http://www.w3.org/2000/svg' 
-                width='12' 
-                height='12' 
-                viewBox='0 0 16 16' 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 16 16"
                 :fill="slotProps.collapsed ? '#cbd5e005' : '#0c63e4'"
-                :style="{ transform: slotProps.collapsed ? 'rotate(0deg)' : 'rotate(-180deg)', transition: 'transform 0.3s ease' }"
+                :style="{
+                  transform: slotProps.collapsed
+                    ? 'rotate(0deg)'
+                    : 'rotate(-180deg)',
+                  transition: 'transform 0.3s ease',
+                }"
               >
-                <path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/>
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
               </svg>
             </template>
             <!-- Seção de Seleção de Período -->
@@ -196,6 +235,7 @@
                       v-model="startDate"
                       :dateFormat="'dd/mm/yy'"
                       class="wcalendar"
+                      :max-date="new Date()"
                     >
                       <template #date="slotProps">
                         <span
@@ -243,6 +283,7 @@
                       v-model="endDate"
                       :dateFormat="'dd/mm/yy'"
                       class="wcalendar"
+                      :max-date="new Date()"
                     >
                       <template #date="slotProps">
                         <span
@@ -304,23 +345,38 @@
                     ]"
                     @click="selectPeriod(period)"
                   >
-                    {{ period < 46 ? `${period}d` : `${Math.round(period / 30)}m` }}
+                    {{
+                      period < 46 ? `${period}d` : `${Math.round(period / 30)}m`
+                    }}
                   </div>
                 </div>
               </div>
             </div>
           </PrimePanel>
-          <PrimePanel v-panel-header-clickable class="panel2 header-clickable" header="Status" toggleable>
+          <PrimePanel
+            v-panel-header-clickable
+            class="panel2 header-clickable"
+            header="Status"
+            toggleable
+          >
             <template #togglericon="slotProps">
-              <svg 
-                xmlns='http://www.w3.org/2000/svg' 
-                width='12' 
-                height='12' 
-                viewBox='0 0 16 16' 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 16 16"
                 :fill="slotProps.collapsed ? '#cbd5e005' : '#0c63e4'"
-                :style="{ transform: slotProps.collapsed ? 'rotate(0deg)' : 'rotate(-180deg)', transition: 'transform 0.3s ease' }"
+                :style="{
+                  transform: slotProps.collapsed
+                    ? 'rotate(0deg)'
+                    : 'rotate(-180deg)',
+                  transition: 'transform 0.3s ease',
+                }"
               >
-                <path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/>
+                <path
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                />
               </svg>
             </template>
             <!-- Filtro de Status -->
@@ -357,36 +413,56 @@
             </div>
           </PrimePanel>
           <PrimePanel class="panel3 empty-panel" header="Pedidos"></PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Transações"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Data Finalizada"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Comprador"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Afiliado"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Produtos"> </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Transações">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Data Finalizada">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Comprador">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Afiliado">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Produtos">
+          </PrimePanel>
           <PrimePanel class="panel3 empty-panel" header="Ofertas"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Tipos de Itens"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Método de Pagamento"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Parcelas"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Mensalidades Pagas"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Tipos de Comissão"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel" header="Código de Cupom"> </PrimePanel>
-          <PrimePanel class="panel3 empty-panel mb-4" header="Origem" style="padding-bottom: 50px">
+          <PrimePanel class="panel3 empty-panel" header="Tipos de Itens">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Método de Pagamento">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Parcelas">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Mensalidades Pagas">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Tipos de Comissão">
+          </PrimePanel>
+          <PrimePanel class="panel3 empty-panel" header="Código de Cupom">
+          </PrimePanel>
+          <PrimePanel
+            class="panel3 empty-panel mb-4"
+            header="Origem"
+            style="padding-bottom: 50px"
+          >
           </PrimePanel>
 
           <div
-            class="px-2 py-4 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr] pr-4 "
-            style="bottom: 0; background-color: #000; width: 400px"
+            class="px-2 py-3 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr]"
+            style="bottom: 0; background-color: #000; width: 420px"
           >
             <PrimeButton
-              class="primary hoverBtn w-[270px] bg-black dark:bg-[#855be2] border-none text-ms font-semibold justify-center"
+              class="primary hoverBtn w-[100%] bg-black dark:bg-[#855be2] border-none text-ms justify-center"
               @click="aplicarFiltros()"
+              style="font-weight: 600; font-size: 0.9rem !important"
             >
               Aplicar Filtro
             </PrimeButton>
             <PrimeButton
               outlined
-              class="primary hoverBtn w-[91px] hover:text-white text-[#855be2] bg-black text-ms font-semibold justify-center"
-              style="border-color: #855be2"
-              >
+              class="primary hoverBtn w-[auto] hover:text-white text-[#855be2] bg-black text-ms justify-center"
+              style="
+                border-color: #855be2;
+                font-weight: 400;
+                font-size: 0.9rem !important;
+              "
+            >
               Limpar
             </PrimeButton>
           </div>
@@ -503,7 +579,7 @@
         </div>
         <div
           class="border-t border-color-default dark:border-gray-600 p-4 text-left text-2xl font-bold font-bold"
-          style="color: #38A169;"
+          style="color: #38a169"
         >
           R$
           {{
@@ -541,7 +617,11 @@
           class="px-6"
           size="small"
         >
-          <PrimeColumn field="acoees" header="Ações" class="text-left actions-column">
+          <PrimeColumn
+            field="acoees"
+            header="Ações"
+            class="text-left actions-column"
+          >
             <template #body="{ data }">
               <PrimeSplitButton
                 icon="pi pi-ellipsis-v"
@@ -638,21 +718,23 @@
                 >
                   <span class="flex items-center">
                     {{ data.status.label }}
-                    <svg 
-                      stroke="currentColor" 
-                      fill="currentColor" 
-                      stroke-width="0" 
-                      version="1.2" 
-                      baseProfile="tiny" 
-                      viewBox="0 0 24 24" 
-                      data-tip="Recorrência" 
-                      height="1em" 
-                      width="1em" 
-                      xmlns="http://www.w3.org/2000/svg" 
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      version="1.2"
+                      baseProfile="tiny"
+                      viewBox="0 0 24 24"
+                      data-tip="Recorrência"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
                       currentItem="false"
                       class="ml-1"
                     >
-                      <path d="M16.5 7h-2.086l1.293-1.293c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-3.707 3.707 3.707 3.707c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414l-1.293-1.293h2.086c1.379 0 2.5 1.346 2.5 3s-1.346 3-3 3c-.553 0-1 .448-1 1s.447 1 1 1c2.757 0 5-2.243 5-5s-2.019-5-4.5-5zM8.293 12.293c-.391.391-.391 1.023 0 1.414l1.293 1.293h-2.086c-1.379 0-2.5-1.346-2.5-3s1.346-3 3-3c.553 0 1-.448 1-1s-.447-1-1-1c-2.757 0-5 2.243-5 5s2.019 5 4.5 5h2.086l-1.293 1.293c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293s.512-.098.707-.293l3.707-3.707-3.707-3.707c-.391-.391-1.023-.391-1.414 0z"></path>
+                      <path
+                        d="M16.5 7h-2.086l1.293-1.293c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-3.707 3.707 3.707 3.707c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414l-1.293-1.293h2.086c1.379 0 2.5 1.346 2.5 3s-1.346 3-3 3c-.553 0-1 .448-1 1s.447 1 1 1c2.757 0 5-2.243 5-5s-2.019-5-4.5-5zM8.293 12.293c-.391.391-.391 1.023 0 1.414l1.293 1.293h-2.086c-1.379 0-2.5-1.346-2.5-3s1.346-3 3-3c.553 0 1-.448 1-1s-.447-1-1-1c-2.757 0-5 2.243-5 5s2.019 5 4.5 5h2.086l-1.293 1.293c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293s.512-.098.707-.293l3.707-3.707-3.707-3.707c-.391-.391-1.023-.391-1.414 0z"
+                      ></path>
                     </svg>
                   </span>
                 </PrimeBadge>
@@ -698,7 +780,7 @@
   </div> -->
 
   <div class="iconWhatsapp">
-    <img src="@/assets/images/whatsapp.png" alt=""  />
+    <img src="@/assets/images/whatsapp.png" alt="" />
   </div>
 </template>
 
@@ -749,22 +831,22 @@ const aplicarFiltros = () => {
 
 const vPanelHeaderClickable = {
   mounted(el) {
-    const header = el.querySelector('.p-panel-header');
+    const header = el.querySelector(".p-panel-header");
     if (header) {
-      header.addEventListener('click', (event) => {
+      header.addEventListener("click", (event) => {
         // Find and click the toggle icon if the click wasn't directly on it
-        const toggleIcon = header.querySelector('.p-panel-header-icon');
-        if (toggleIcon && !event.target.closest('.p-panel-header-icon')) {
+        const toggleIcon = header.querySelector(".p-panel-header-icon");
+        if (toggleIcon && !event.target.closest(".p-panel-header-icon")) {
           toggleIcon.click();
         }
       });
     }
-  }
-}
+  },
+};
 
 useHead({
-  title: 'Relatório de Vendas',
-})
+  title: "Relatório de Vendas",
+});
 
 // Estado do modal
 const showModal = ref(false);
@@ -788,6 +870,10 @@ onMounted(() => {
     loadingData.value = false;
   }, 1000);
 
+  setInterval(() => {
+    mudaLabelCalendario();
+  }, 100);
+
   const dashboard = JSON.parse(localStorage.getItem("dashboard"));
   if (dashboard) {
     totalPedidos.value = dashboard.totalPedidos;
@@ -797,6 +883,38 @@ onMounted(() => {
     valorComissoes.value = dashboard.valorComissoes;
   }
 });
+
+const mudaLabelCalendario = () => {
+  document
+    .querySelectorAll(".p-datepicker-calendar th span")
+    .forEach(function (elemento) {
+      switch (elemento.textContent) {
+        case "Do":
+          elemento.textContent = "dom";
+          break;
+        case "Se":
+          elemento.textContent = "seg";
+          break;
+        case "Te":
+          elemento.textContent = "ter";
+          break;
+        case "Qa":
+          elemento.textContent = "qua";
+          break;
+        case "Qi":
+          elemento.textContent = "qui";
+          break;
+        case "Sx":
+          elemento.textContent = "sex";
+          break;
+        case "Sa":
+          elemento.textContent = "sáb";
+          break;
+        default:
+          break;
+      }
+    });
+};
 
 const fechaBlur = () => {
   if (showFilters.value) {
@@ -917,7 +1035,10 @@ const selectAll = () => {
 const images = import.meta.glob("@/assets/images/logos/*.png", { eager: true });
 
 const getImageSrc = (metodo) => {
-  return images[`/assets/images/logos/${metodo ?? "mastercard"}.png`]?.default || images["/assets/images/logos/mastercard.png"].default;
+  return (
+    images[`/assets/images/logos/${metodo ?? "mastercard"}.png`]?.default ||
+    images["/assets/images/logos/mastercard.png"].default
+  );
 };
 
 const deselectAll = () => {
@@ -946,7 +1067,7 @@ const SummaryCard = defineProps({
 }
 
 .dark .p-inputtext {
-  background-color: #08090B !important; /* Fundo escuro no modo dark */
+  background-color: #08090b !important; /* Fundo escuro no modo dark */
   color: #acb5bf !important; /* Texto branco no modo dark */
   border-color: #202020 !important;
 }
@@ -1009,7 +1130,6 @@ const SummaryCard = defineProps({
   border: none !important;
 }
 .dark .p-panel .p-panel-content {
-  background-color: #2e2e2e !important; /* Fundo escuro no modo dark */
   color: #ffffff !important; /* Texto branco no modo dark */
   border: none !important;
 }
@@ -1033,9 +1153,9 @@ const SummaryCard = defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
   font-weight: 500;
-  transition: .2s;
+  transition: 0.2s;
 }
 .p-button.p-button-warning.p-button-outlined:hover {
   border: 1px solid #faad14;
@@ -1047,7 +1167,7 @@ const SummaryCard = defineProps({
   color: #855be2;
   height: 2.5rem;
   padding: 0 22px !important;
-  gap: .5rem;
+  gap: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1058,7 +1178,7 @@ const SummaryCard = defineProps({
   color: #38a169;
   height: 2.5rem;
   padding: 0 22px !important;
-  gap: .5rem;
+  gap: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1114,12 +1234,11 @@ const SummaryCard = defineProps({
   border-radius: 20px;
 }
 .p-datatable-tbody td {
-  color: #CBD5E0;
+  color: #cbd5e0;
   font-size: 0.8rem !important;
 }
 .iconWhatsapp {
-
-display: flex !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 0 !important;
@@ -1135,7 +1254,7 @@ display: flex !important;
   text-align: center !important;
   font-size: 30px !important;
   z-index: 1000 !important;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 .iconWhatsapp:hover {
@@ -1170,7 +1289,6 @@ display: flex !important;
 .empty-panel .p-toggleable-content {
   display: none;
 }
-
 
 .empty-panel .p-panel-header {
   padding-bottom: 10px !important;
@@ -1207,4 +1325,21 @@ display: flex !important;
   height: 12px;
   color: #635e70;
 }
+
+
+/** altera estilo apenas para a pagina de vendas */
+.p-datepicker:not(.p-datepicker-inline) {
+  background: hsla(0, 0%, 49%, 0.388);
+  backdrop-filter: blur(2px);
+}
+
+.p-datepicker table tr th {
+  padding-bottom: 8px;
+  padding-top: 0px !important;
+  border-bottom: 6px solid hsla(0, 0%, 15%, 0.518);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev, .p-datepicker .p-datepicker-header .p-datepicker-next {
+  color: #fff !important;
+} 
 </style>

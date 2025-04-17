@@ -1340,6 +1340,6 @@ const SummaryCard = defineProps({
 }
 
 .p-datepicker .p-datepicker-header .p-datepicker-prev, .p-datepicker .p-datepicker-header .p-datepicker-next {
-  color: hsl(0, 0%, 71%) !important;
+  color: #fff !important;
 } 
 </style>

@@ -1130,7 +1130,6 @@ const SummaryCard = defineProps({
   border: none !important;
 }
 .dark .p-panel .p-panel-content {
-  background-color: #2e2e2e !important; /* Fundo escuro no modo dark */
   color: #ffffff !important; /* Texto branco no modo dark */
   border: none !important;
 }
@@ -1326,4 +1325,21 @@ const SummaryCard = defineProps({
   height: 12px;
   color: #635e70;
 }
+
+
+/** altera estilo apenas para a pagina de vendas */
+.p-datepicker:not(.p-datepicker-inline) {
+  background: hsla(0, 0%, 49%, 0.388);
+  backdrop-filter: blur(2px);
+}
+
+.p-datepicker table tr th {
+  padding-bottom: 8px;
+  padding-top: 0px !important;
+  border-bottom: 6px solid hsla(0, 0%, 15%, 0.518);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev, .p-datepicker .p-datepicker-header .p-datepicker-next {
+  color: hsl(0, 0%, 71%) !important;
+} 
 </style>

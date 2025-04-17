@@ -447,4 +447,16 @@ const chartOptions = {
 .dark .group-calendar .p-inputtext {
   border-width: 0;
 }
+
+/** isso esta aqui pra prevenir que a alteracao da pagina de vendas sobrescreva o padrao */
+.p-datepicker:not(.p-datepicker-inline) {
+  background: hsla(0, 0%, 100%, 0.04);
+  backdrop-filter: blur(15px);
+}
+
+.p-datepicker table tr th {
+  padding-bottom: 8px;
+  padding-top: 0px !important;
+  border-bottom: 6px solid hsl(0deg 0% 6.06% / 62%);
+}
 </style>

@@ -260,7 +260,7 @@ body::-webkit-scrollbar-track-piece {
 }
 
 .p-datepicker:not(.p-datepicker-inline) {
-  background: hsla(0, 0%, 100%, 0.04) !important;
+  background: hsla(0, 0%, 100%, 0.04);
   backdrop-filter: blur(15px);
   width: auto !important;
 }

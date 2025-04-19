@@ -47,7 +47,7 @@
             </PrimeCalendar>
             <PrimeButton
               :icon="'pi pi-calendar'"
-              class="bg-blue-500 text-[#cbd5e0] dark:bg-[#08090b] border-none"
+              class="bg-blue-500 text-white dark:bg-[#08090b] border-none"
               @click="openCalendarInicio"
             />
           </PrimeInputGroup>

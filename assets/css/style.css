@@ -343,6 +343,16 @@ body::-webkit-scrollbar-track-piece {
   padding-top: 0 !important;
 }
 
-.p-panel-title {
-  font-weight: 400;
+.p-calendar {
+  border: none !important;
+}
+
+span.p-column-title {
+  color: #d4d9df99 !important;
+  font-size: 0.63rem !important;
+}
+
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev:enabled:hover, .p-datepicker .p-datepicker-header .p-datepicker-next:enabled:hover {
+  background-color: transparent;
 }

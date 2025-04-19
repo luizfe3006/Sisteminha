@@ -287,7 +287,7 @@
               </div>
 
               <!-- Botões de Intervalos Pré-definidos -->
-              <div class="vstack gap-3">
+              <div class="vstack gap-3" style="padding-bottom: 30px;">
                 <span>Últimos</span>
                 <div class="grid grid-cols-5 gap-2 gap-y-4 mt-5">
                   <div
@@ -302,6 +302,7 @@
                         : 'dark:bg-[#855be2]',
                     ]"
                     @click="selectPeriod(period)"
+                    style="max-width: 65px"
                   >
                     {{
                       period < 46 ? `${period}d` : `${Math.round(period / 30)}m`
@@ -408,7 +409,7 @@
             <PrimeButton
               class="primary hoverBtn w-[100%] bg-black dark:bg-[#855be2] border-none text-ms justify-center"
               @click="aplicarFiltros()"
-              style="font-weight: 600; font-size: 0.9rem !important"
+              style="font-weight: 600; font-size: 0.9rem !important; margin-bottom: 0px !important;"
             >
               Aplicar Filtro
             </PrimeButton>
@@ -1348,5 +1349,11 @@ const SummaryCard = defineProps({
 .p-datepicker .p-datepicker-header .p-datepicker-prev,
 .p-datepicker .p-datepicker-next {
   color: #fff !important;
+}
+
+.p-datepicker-next:enabled:hover .p-datepicker-prev:enabled:hover {
+  color: #fff;
+  border-color: transparent;
+  background: transparent;
 }
 </style>

@@ -185,7 +185,7 @@
       <div
         v-if="showFilters"
         class="fixed top-0 right-0 h-full shadow-lg z-[4001] flex flex-col"
-        :style="{ width: '450px' }"
+        :style="{ width: '450px', backgroundColor: '#000000ab' }"
       >
         <!-- Título fixo no topo -->
         <div
@@ -238,42 +238,21 @@
                       :max-date="new Date()"
                     >
                       <template #date="slotProps">
-                        <span
-                          v-if="
-                            new Date(
-                              slotProps.date.year +
-                                '-' +
-                                slotProps.date.month +
-                                '-' +
-                                slotProps.date.day
-                            ) >=
-                              new Date(
-                                startDate.getFullYear() +
-                                  '-' +
-                                  startDate.getMonth() +
-                                  '-' +
-                                  startDate.getDate()
-                              ) &&
-                            new Date(
-                              slotProps.date.year +
-                                '-' +
-                                slotProps.date.month +
-                                '-' +
-                                slotProps.date.day
-                            ) <=
-                              new Date(
-                                endDate.getFullYear() +
-                                  '-' +
-                                  endDate.getMonth() +
-                                  '-' +
-                                  endDate.getDate()
-                              )
-                          "
+                        <div
+                          @mouseover="hoverInitDate = slotProps.date"
+                          @mouseleave="hoverInitDate = null"
+                          v-if="isMarked(slotProps.date)"
                           class="marcado"
                         >
                           {{ slotProps.date.day }}
-                        </span>
-                        <template v-else>{{ slotProps.date.day }}</template>
+                        </div>
+                        <div
+                          @mouseover="hoverInitDate = slotProps.date"
+                          @mouseleave="hoverInitDate = null"
+                          v-else
+                        >
+                          {{ slotProps.date.day }}
+                        </div>
                       </template>
                     </PrimeCalendar>
                   </div>
@@ -282,46 +261,25 @@
                     <PrimeCalendar
                       v-model="endDate"
                       :dateFormat="'dd/mm/yy'"
-                      class="wcalendar"
                       :max-date="new Date()"
                     >
                       <template #date="slotProps">
-                        <span
-                          v-if="
-                            new Date(
-                              slotProps.date.year +
-                                '-' +
-                                slotProps.date.month +
-                                '-' +
-                                slotProps.date.day
-                            ) >=
-                              new Date(
-                                startDate.getFullYear() +
-                                  '-' +
-                                  startDate.getMonth() +
-                                  '-' +
-                                  startDate.getDate()
-                              ) &&
-                            new Date(
-                              slotProps.date.year +
-                                '-' +
-                                slotProps.date.month +
-                                '-' +
-                                slotProps.date.day
-                            ) <=
-                              new Date(
-                                endDate.getFullYear() +
-                                  '-' +
-                                  endDate.getMonth() +
-                                  '-' +
-                                  endDate.getDate()
-                              )
-                          "
-                          class="marcado"
+                        <div
+                          @mouseover="hoverEndDate = slotProps.date"
+                          @mouseleave="hoverEndDate = null"
+                          v-if="isMarked(slotProps.date)"
+                          class="marcado w-full h-full flex items-center justify-center"
                         >
                           {{ slotProps.date.day }}
-                        </span>
-                        <template v-else>{{ slotProps.date.day }}</template>
+                        </div>
+                        <div
+                          @mouseover="hoverEndDate = slotProps.date"
+                          @mouseleave="hoverEndDate = null"
+                          v-else
+                          class="w-full h-full flex items-center justify-center"
+                        >
+                          {{ slotProps.date.day }}
+                        </div>
                       </template>
                     </PrimeCalendar>
                   </div>
@@ -445,7 +403,7 @@
 
           <div
             class="px-2 py-3 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr]"
-            style="bottom: 0; background-color: #000; width: 420px"
+            style="bottom: 0; background-color: #000; width: 436px"
           >
             <PrimeButton
               class="primary hoverBtn w-[100%] bg-black dark:bg-[#855be2] border-none text-ms justify-center"
@@ -790,6 +748,7 @@ import {
   formatNumberAsCurrency,
   formatDateAsString,
 } from "~/utils/functions/formatData";
+
 const totalPedidos = ref(0);
 const totalItens = ref(0);
 const upsells = ref(0);
@@ -810,6 +769,54 @@ const selectPeriod = (days) => {
 
   endDate.value = today;
 };
+const hoverInitDate = ref(null);
+const hoverEndDate = ref(null);
+
+function isMarked(date) {
+  const current = new Date(date.year, date.month, date.day);
+
+  const start = startDate.value;
+  const end = endDate.value;
+
+  const isHoverValidInit =
+    !hoverInitDate.value ||
+    new Date(
+      hoverInitDate.value.year,
+      hoverInitDate.value.month,
+      hoverInitDate.value.day
+    ) <= end;
+
+  const isHoverValidEnd =
+    !hoverEndDate.value ||
+    new Date(
+      hoverEndDate.value.year,
+      hoverEndDate.value.month,
+      hoverEndDate.value.day
+    ) >= start;
+
+  const hoverStart =
+    hoverInitDate.value && isHoverValidInit
+      ? new Date(
+          hoverInitDate.value.year,
+          hoverInitDate.value.month,
+          hoverInitDate.value.day
+        )
+      : start;
+
+  const hoverEnd =
+    hoverEndDate.value && isHoverValidEnd
+      ? new Date(
+          hoverEndDate.value.year,
+          hoverEndDate.value.month,
+          hoverEndDate.value.day
+        )
+      : end;
+
+  const min = new Date(Math.min(hoverStart.getTime(), hoverEnd.getTime()));
+  const max = new Date(Math.max(hoverStart.getTime(), hoverEnd.getTime()));
+
+  return current >= min && current <= max;
+}
 
 const aplicarFiltros = () => {
   // window.location.reload();
@@ -1341,5 +1348,5 @@ const SummaryCard = defineProps({
 .p-datepicker .p-datepicker-header .p-datepicker-prev,
 .p-datepicker .p-datepicker-next {
   color: #fff !important;
-} 
+}
 </style>

@@ -334,13 +334,15 @@ body::-webkit-scrollbar-track-piece {
   background-color: #151515 !important;
   padding: 10px 17.5px;
 }
-.panel2 {
-  margin-bottom: 10px;
-}
+
 .panel2 .p-panel-header {
   min-height: 38px;
 }
 
 .panel2 .p-4 {
   padding-top: 0 !important;
+}
+
+.p-panel-title {
+  font-weight: 400;
 }

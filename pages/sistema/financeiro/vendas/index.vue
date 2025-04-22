@@ -287,7 +287,7 @@
               </div>
 
               <!-- Botões de Intervalos Pré-definidos -->
-              <div class="vstack gap-3" style="padding-bottom: 30px;">
+              <div class="vstack gap-3" style="padding-bottom: 30px">
                 <span>Últimos</span>
                 <div class="grid grid-cols-5 gap-2 gap-y-4 mt-5">
                   <div
@@ -404,12 +404,17 @@
 
           <div
             class="px-2 py-3 mb-2 fixed gap-x-3 grid grid-cols-[70%_1fr]"
-            style="bottom: 0; background-color: #000; width: 436px"
+            style="
+              bottom: 0;
+              background-color: #000;
+              width: 436px;
+              margin-bottom: 0px !important;
+            "
           >
             <PrimeButton
               class="primary hoverBtn w-[100%] bg-black dark:bg-[#855be2] border-none text-ms justify-center"
               @click="aplicarFiltros()"
-              style="font-weight: 600; font-size: 0.9rem !important; margin-bottom: 0px !important;"
+              style="font-weight: 600; font-size: 0.9rem !important"
             >
               Aplicar Filtro
             </PrimeButton>
